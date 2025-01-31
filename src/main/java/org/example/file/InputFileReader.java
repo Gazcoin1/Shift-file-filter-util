@@ -38,7 +38,8 @@ public class InputFileReader {
                 BufferedReader reader = Files.newBufferedReader(path);
                 readFileLine(reader);
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.err.println("Error reading files: " + e.getMessage());
+                System.err.println("Most likely you made a mistake in specifying the arguments");
             }
         }
 
